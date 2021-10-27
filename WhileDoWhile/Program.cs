@@ -114,58 +114,87 @@ namespace WhileDoWhile
 
             //. Blir fel siffror.... 66 och 29...
            
-
-
             //6.
 
+            // Be använaren om ålder
             Console.WriteLine("Skriv in din ålder: ");
             int age = Convert.ToInt32(Console.ReadLine());
 
-            // Antal år kvar till pension
+            //Antal år kvar till pension
+            int retirementAge = 65;
+            int yearsLeft = retirementAge - age;
+            Console.WriteLine("Du har {0} år kvar till pension.", yearsLeft);
 
-            int retairmentAge = 65;
-            int yearsleft = retairmentAge - age;
-            Console.WriteLine("Du har {0} år kvar till pension.", yearsleft);
-
-            //Fråga om att spola fram tiden
-
-            Console.WriteLine("Vill du spola fram till pension? [J/N]");
+            //Fråga om att spola fram tiden.
+            Console.WriteLine("Vill du spola fram till pension? [J/N] ");
             char choice = Convert.ToChar(Console.ReadLine());
-
             if (choice == 'J')
             {
                 int originalAge = age;
-                // Skriv ut ålder varje år
-                while (age < retairmentAge)
+                //Skriv ut ålder varje år
+                while (age < retirementAge)
                 {
-                    Console.WriteLine("Du är nu {0} år,", age);
                     age++;
+                    Console.WriteLine("Du har nu {0} år", age);
                 }
-            }
-            else
-            {
-                Console.WriteLine("Okej, njut av livet.");
-            }
 
-            Console.WriteLine("Vill du stanna kvar här? [J/N]");
-            choice = Convert.ToChar(Console.ReadLine());
+                Console.WriteLine("Vill du stanna kvar här? [J/N]");
+                choice = Convert.ToChar(Console.ReadLine());
 
-            if (choice == 'J')
-            {
-                while (age > originalAge)
+                if (choice == 'N')
                 {
-                    age--;
-                    Console.WriteLine("Du är nu {0} år", age);
+                    while (age > originalAge)
+                    {
+                        age--;
+                        Console.WriteLine("Du är {0} år.", age);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Okej, njut av livet!");
                 }
             }
-            else
-            {
-                Console.WriteLine("Njut av pensionen.");
-            }
-
+            Console.WriteLine("Tack för din tid!");
            
             //7.
 
+            // Skriv ett program som sparar information om 3 användare. Varje användare ska ha:
+            // Namn, Ort, Skostorlek, Favoritkaraktär i valfri serie/ film.
+            // Allt ska sparas i en array, och värdena ska skrivas in via konsolen.
+            // Skriv ut en sammanställning för varje användare.
+
+            string[,] userArray = new string[3, 4]; // En array med 3 rader och fyra kolumner, för 3 användare med fyra värden var.
+
+            int userCount = 0; 
+            int users = userArray.GetLength(0); // Varför står det 0 här? 
+
+            while (userCount < users) // Så länge userCount är mindre än users så körs loopen, users är lika lång som längden på arrayen. 
+            {
+                Console.WriteLine("Användare {0}", userCount +1);
+                Console.WriteLine("Namn: ");
+                userArray[userCount, 0] = Console.ReadLine(); // Namn läggs in i arrayen på plats [0,0] första varvet, [1,0] andra varvet, [2,0] tredje varvet, [3, 0] fjärde varvet.  
+                Console.WriteLine("Ort: ");
+                userArray[userCount, 1] = Console.ReadLine(); // Ort läggs in i arrayen på plats [0, 1] första varvet, [1, 1] andra varvet, [2, 1] tredje varvet, [3, 1] fjärde varvet. 
+                Console.WriteLine("Skostorlek: ");
+                userArray[userCount, 2] = Console.ReadLine(); // Skostorlek läggs in i arrayen på plats[0, 2] första varvet, [1, 2] andra varvet, [2, 2] tredje varvet, [3, 2] fjärde varvet. 
+                Console.WriteLine("Favoritkaraktär: ");
+                userArray[userCount, 3] = Console.ReadLine(); // Favoritkaraktär läggs in i arrayen på plats[0, 3] första varvet, [1, 3] andra varvet, [2, 3] tredje varvet, [3, 3] fjärde varvet. 
+                Console.ReadLine();
+                userCount++; 
+            }
+
+            userCount = 0;
+            while (userCount < users)
+            {
+                Console.WriteLine("Användare {0}", userCount + 1);
+                Console.WriteLine("Namn: {0}", userArray[userCount, 0]);
+                Console.WriteLine("Ort: {0}", userArray[userCount, 1]);
+                Console.WriteLine("Skostorlek: {0}", userArray[userCount, 2]);
+                Console.WriteLine("Favoritkaraktär: {0}", userArray[userCount, 3]);
+                userCount++;
+            }
+
+          
             //8.
 
             int correctNr = 10;
@@ -178,8 +207,7 @@ namespace WhileDoWhile
                 Console.WriteLine("Gissa vilket nr: ");
                 wrongNr = Convert.ToInt32(Console.ReadLine());
             }
-           */
-
+          
 
             //11.
 
@@ -208,6 +236,7 @@ namespace WhileDoWhile
 
             // När loopen bryts skriv ut summan
             Console.WriteLine("Total summa: {0}", memory); // Så länge value är större än 0 så fortsätter loppen, för att bryta loopen måste man skriva in ett negativt tal.
+             */
         }
     }
 }

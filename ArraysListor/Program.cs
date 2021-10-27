@@ -82,7 +82,7 @@ namespace ArraysListor
             Console.Write(thirdList[0]);
             Console.Write(thirdList[1]);
             Console.WriteLine(thirdList[2]);
-            */
+           
 
             //11.
             //a.räkna antal element i listan
@@ -125,7 +125,7 @@ namespace ArraysListor
             {
                 Console.Write(c);
             }
-
+             */
 
         }
     }
