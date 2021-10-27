@@ -38,7 +38,7 @@ namespace Repetition
 
             for (int i = 0; i < userStringList.Count; i++)
             {
-                if (userStringList[i] == userStringList[userStringList.Count - (i + 1)])
+                if (userStringList[i] == userStringList[userStringList.Count - (i + 1)]) // Jämför bokstav för bokstav baifrån och framifrån för att se om de är lika. Hade bara behövt jämföra halva ordet egentligen. 
                 {
                     Console.WriteLine("Samma bokastavsindex");
                 }
