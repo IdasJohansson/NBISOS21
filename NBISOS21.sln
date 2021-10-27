@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForEach", "ForEach\ForEach.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caulculator", "Caulculator\Caulculator.csproj", "{218E8989-9A31-4DDE-90BE-7BBB21D8A6EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repetition", "Repetition\Repetition.csproj", "{119C49E4-ACDB-47F8-8E7B-40BCE6BE5957}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{218E8989-9A31-4DDE-90BE-7BBB21D8A6EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{218E8989-9A31-4DDE-90BE-7BBB21D8A6EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{218E8989-9A31-4DDE-90BE-7BBB21D8A6EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119C49E4-ACDB-47F8-8E7B-40BCE6BE5957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119C49E4-ACDB-47F8-8E7B-40BCE6BE5957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119C49E4-ACDB-47F8-8E7B-40BCE6BE5957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119C49E4-ACDB-47F8-8E7B-40BCE6BE5957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
