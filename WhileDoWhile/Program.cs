@@ -18,7 +18,7 @@ namespace WhileDoWhile
             }
            
 
-            //.1
+            //.1 Skriv ut alla tal från 1-10.
 
             int i = 1;
             while (i <=10)
@@ -27,7 +27,7 @@ namespace WhileDoWhile
                 i++;
             }
 
-            //2.
+            //2. Skriv ut alla tal från 10-1
 
             i = 10;
             while (i>=1)
@@ -37,7 +37,8 @@ namespace WhileDoWhile
             }
             
 
-            //3.
+            //3. Skriv ut alla jämna tal från 1-100
+            // a. Nästa steg: Låt användaren välja start & stopp.
 
             Console.WriteLine("Skriv in ett startnr: ");
             int i = Convert.ToInt32(Console.ReadLine());
@@ -51,7 +52,8 @@ namespace WhileDoWhile
             }
              
 
-            //4.
+            //4. Skriv ut alla ojämna tal från 1-100
+            a. Nästa steg: Låt användaren välja start & stopp.
 
             Console.WriteLine("Skriv in ett startnr: ");
             int start = Convert.ToInt32(Console.ReadLine());
@@ -65,7 +67,8 @@ namespace WhileDoWhile
             }
             
 
-            //5.
+            //5. Skapa en array med valfritt antal integers. Skapa en loop som summerar samtliga tal. Skriv ut resultatet.
+
             //while
             int[] arrayWithNr = new int[] { 20, 30, 40 };
             int i = 0;
@@ -81,7 +84,18 @@ namespace WhileDoWhile
             //doWhile
              
 
-            //6.
+            //6. Be användaren mata in sin ålder
+            // Skriv ut hur många år det är kvar till pension
+            // Fråga användaren om man vill spola fram tiden till pension.
+            // Svaret ska får vara valfri datatyp.
+            // Om användaren väljer att spola fram tiden:
+            // Öka åldern med 1 och skriv ut varje ökning till dess att användaren än 65.
+            // Vid 65 ska användaren få bestämma om de vill stanna kvar på den åldern eller spola tillbaks tiden. Om användaren väljer att stanna kvar:
+            // skriver programmet ut något passande och avslutas
+            // Om användaren väljer att inte stanna kvar:
+            // Åldern ändras till den ursprungliga ålder.
+            // Använd en loop för att skriva ut förändringen, år för år.
+            // Skriv något passande och avsluta programmet.
 
             int age = 0;
             int pension = 65; 
@@ -157,7 +171,6 @@ namespace WhileDoWhile
             Console.WriteLine("Tack för din tid!");
            
             //7.
-
             // Skriv ett program som sparar information om 3 användare. Varje användare ska ha:
             // Namn, Ort, Skostorlek, Favoritkaraktär i valfri serie/ film.
             // Allt ska sparas i en array, och värdena ska skrivas in via konsolen.
@@ -195,21 +208,80 @@ namespace WhileDoWhile
             }
 
           
-            //8.
+            //8.Skapa ett program som låter användaren gissa på ett tal.
+            // Loopa tills att användaren gissar rätt alt. ger användaren x antal gissningar. Räkna, och skriv ut, antal gissningar för användaren.
+            // Lagra felaktigt gissade nummer i en lista.
+            // Tips: Random
 
             int correctNr = 10;
-            int wrongNr = 0; 
+            int wrongNr = 0;
+            int guesses = 0;  
 
             List<int> wrongGuesses = new List<int>() { };
 
-            while (wrongNr != correctNr)
+            while (wrongNr != correctNr && guesses<= 10)
             {
-                Console.WriteLine("Gissa vilket nr: ");
+                Console.WriteLine("Gissa vilket nr, du har 10 gissningar på dig.");
                 wrongNr = Convert.ToInt32(Console.ReadLine());
-            }
-          
 
-            //11.
+                if (wrongNr == correctNr)
+                {
+                    Console.WriteLine("Rätt gissning!");
+                }
+                else
+                {
+                    wrongGuesses.Add(wrongNr);
+                    guesses++;
+                    Console.WriteLine("Gissning nr: {0} / 10", guesses);
+                    Console.WriteLine("Försök igen!");
+                }
+                foreach (int item in wrongGuesses)
+                {
+                    Console.WriteLine("Fel gissning: {0}", item);
+                }
+            }
+
+            //9. Be användaren skriva in ett tal.
+            // Skriv ut multiplikationstabellen för talet (0-10).
+
+            Console.WriteLine("Enter a number:");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int count = 0; 
+
+            while (count <= 10)
+            {
+                Console.WriteLine("{0} * {1} = {2}", number, count,number * count);
+                count++;
+            }
+           
+            // 10.Be användaren skriva in ett valfritt tal.
+            // Skapa en array av valfri typ, med plats för lika många element som användaren har valt.Skapa en loop som ser till att användaren skriver in värden för varje element.
+            // Skriv ut samtliga element i arrayen innan programmet avslutas.
+
+            Console.Write("Enter desired number of elements: ");
+            int elements = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[elements];
+            int count = 0;
+
+            while (count < elements)
+            {
+                Console.Write("Enter a number to insert: ");
+                numbers[count] = Convert.ToInt32(Console.ReadLine());
+                count++;
+            }
+
+            count = 0;
+            while (count < elements)
+            {
+                Console.WriteLine(numbers[count]);
+                count++;
+            }
+
+            //11. Skapa en variabel som heter memory, sätt värdet till 0. Skapa en variabel som heter value, sätt värdet till 0.
+            // Skapa en while-loop med villkoret value>=0
+            // Fråga användaren efter ett nytt värde.
+            // Omvandla värdet och lägg det i variabeln value. Addera value till memory.
+            // När loopen bryts, skriv ut värdet som lagrats i memory.
 
             // Skapa en variabel som heter memory värde 0
             int memory = 0;
@@ -237,6 +309,13 @@ namespace WhileDoWhile
             // När loopen bryts skriv ut summan
             Console.WriteLine("Total summa: {0}", memory); // Så länge value är större än 0 så fortsätter loppen, för att bryta loopen måste man skriva in ett negativt tal.
              */
+
+            // 12.Skriv ett program där användaren ska gissa på huvudstäder. Lagra länder och huvudstäder i två separata arrays/ listor.Skriv ut ”Vad heter huvudstaden i .... ?”
+            // Kontrollera om svaret är rätt.
+            // Skriv ut något passande beroende på om det är rätt eller fel.
+            // Loopa tills användaren gissat på samtliga länder, alt x antal gissningar. Räkna antal rätta resp. felaktiga svar.
+
+
         }
     }
 }

@@ -49,6 +49,19 @@ namespace Repetition
              }
               */
 
+          
+                Console.Write("Enter a number: ");
+                int table = Convert.ToInt32(Console.ReadLine());
+                int count = 0;
+
+                while (count <= 10)
+                {
+                    Console.WriteLine("{0} * {1} = {2}", table, count, table * count);
+                    count++;
+                }
+     
+
+
         }
     }
 }
