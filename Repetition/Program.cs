@@ -47,21 +47,107 @@ namespace Repetition
                      Console.WriteLine("Inget Palindrom");
                  }
              }
-              */
+             
 
-          
-                Console.Write("Enter a number: ");
-                int table = Convert.ToInt32(Console.ReadLine());
-                int count = 0;
 
-                while (count <= 10)
+            Dictionary<int, string> weekdays = new Dictionary<int, string>() { { 1, "Måndag" }, { 2, "Tisdag" }, { 3, "Onsdag" }, { 4, "Torsdag" }, { 5, "Fredag" }, { 6, "Lördag" }, { 7, "Söndag" } };
+
+            // Be användaren skriva in ett tal 1-7
+            Console.WriteLine("Skriv in ett tal: [1-7]");
+
+            // Konvertera, och lagra, inmatningen
+            int input = Convert.ToInt32(Console.ReadLine());
+
+            // Lagra rätt veckodag i en variabel
+            string day = weekdays[input];
+
+            // Skriv ut veckodagen
+            Console.WriteLine(day);
+             */
+
+
+            static void WelcomeApp()
+            {
+                Console.WriteLine("Välkommen, skriv in ditt namn!");
+
+            }
+
+            static void Main(string[] args)
+            {
+                bool Finish = true;
+                double result;
+                char Count;
+
+                List<string> Historik = new List<string>();
+
+                WelcomeApp();
+
+                string name = Console.ReadLine();
+
+                Console.WriteLine("Hej " + name);
+
+                while (Finish)
+
                 {
-                    Console.WriteLine("{0} * {1} = {2}", table, count, table * count);
-                    count++;
+                    Console.WriteLine("Skriv in ett tal");
+                    int tal1 = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Skriv ett till tal");
+                    int tal2 = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Välj operator: ");
+                    Count = Convert.ToChar(Console.ReadLine());
+
+                    if (Count == '+')
+                    {
+                        result = tal1 + tal2;
+                        Console.WriteLine("{0}{1}{2}", tal1, tal2, result);
+                        Historik.Add(string.Format("{0} + {1} = {2}", tal1, tal2, result));
+                    }
+                    else if (Count == '*')
+                    {
+                        result = tal1 * tal2;
+                        Console.WriteLine(result);
+                        Historik.Add(string.Format("{0} * {1} = {2}", tal1, tal2, result));
+                    }
+                    else if (Count == '-')
+                    {
+                        result = tal1 - tal2;
+                        Console.WriteLine(result);
+                        Historik.Add(string.Format("{0} - {1} = {2}", tal1, tal2, result));
+
+                    }
+                    else if (Count == '/')
+                    {
+                        result = tal1 / tal2;
+                        Console.WriteLine(result);
+                        Historik.Add(string.Format("{0} / {1} = {2}", tal1, tal2, result));
+                    }
+
+
+                    Console.WriteLine(" Vill du köra om? [JA(/NEJ] ");
+                    string svar = Console.ReadLine();
+
+
+                    if (svar == "NEJ")
+                    {
+                        Console.WriteLine("vill du se tidiagre uträknigar? [JA / NEJ]");
+                        string choice = Console.ReadLine();
+
+                        if (choice == "JA")
+                        {
+                            foreach (string item in Historik)
+                            {
+                                Console.WriteLine("Uträkning är: {0}", item);
+                            }
+                        }
+                        else
+                        {
+                            Finish = false;
+                        }
+                    }
                 }
-     
-
-
+            }
         }
     }
 }

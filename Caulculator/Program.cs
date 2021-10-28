@@ -79,7 +79,7 @@ namespace Caulculator
                     string nr2 = tal2.ToString();
                     string userChoice = choice.ToString();
                     string result = addition.ToString(); // Denna behövs inte...för att? Konverteras den till string för att den skrivs ut i en textsträng ovan?
-                    string calculation = nr1 + userChoice + nr2 + "=" + addition; // Konverterar hela uträkningen till en string
+                    string calculation = nr1 + userChoice + nr2 + "=" + result; // Konverterar hela uträkningen till en string
                     calculations.Add(calculation); // Lägger till min textsträng i min lista
                     Console.WriteLine();
                 }
@@ -91,7 +91,7 @@ namespace Caulculator
                     string nr2 = tal2.ToString();
                     string userChoice = choice.ToString();
                     string result = subtraktion.ToString();
-                    string calculation = nr1 + userChoice + nr2 + "=" + subtraktion;
+                    string calculation = nr1 + userChoice + nr2 + "=" + result;
                     calculations.Add(calculation);
                     Console.WriteLine();
                 }
@@ -103,7 +103,7 @@ namespace Caulculator
                     string nr2 = tal2.ToString();
                     string userChoice = choice.ToString();
                     string result = multiplikation.ToString();
-                    string calculation = nr1 + userChoice + nr2 + "=" + multiplikation;
+                    string calculation = nr1 + userChoice + nr2 + "=" + result;
                     calculations.Add(calculation);
                     Console.WriteLine();
                 }
@@ -115,7 +115,7 @@ namespace Caulculator
                     string nr2 = tal2.ToString();
                     string userChoice = choice.ToString();
                     string result = division.ToString();
-                    string calculation = nr1 + userChoice + nr2 + "=" + division;
+                    string calculation = nr1 + userChoice + nr2 + "=" + result;
                     calculations.Add(calculation);
                     Console.WriteLine();
                 }
