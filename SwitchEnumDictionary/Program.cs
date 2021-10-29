@@ -436,13 +436,56 @@ namespace SwitchEnumDictionary
                     Console.WriteLine("A");
                     break;
             }
-            */
+          
+
+            // ------------------------------------------------------------------------------------------------------
 
             //15. Skapa en dictionary med alla veckodagar.
             // Använd valfri loop för att, i en ny dictionary, byta plats på nyckel och värde.
 
+            Dictionary<int, string> weekdays = new Dictionary<int, string>()
+            {
+                {1, "Monday"},
+                {2, "Tuesday"},
+                {3, "Wednesday"},
+                {4, "Thursday"},
+                {5, "Friday"},
+                {6, "Saturday"},
+                {7, "Sunday"}
+            };
+
+            foreach (KeyValuePair<int, string> item in weekdays) // Skriver ut hela Dictionary weekdays
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine(); // Tom rad
 
 
+
+            Dictionary<string, int> switchedValues = new Dictionary<string, int>() { }; // Tom dictionary med string som key och int som value
+            foreach (KeyValuePair<int, string> item in weekdays) // För varje int och sting i Dictionary weekdays
+            {
+                switchedValues.Add(item.Value, item.Key); //Lägg till value i switchedValues (Blir nyckel), Lägg till key (Blir value)
+            }
+
+            foreach (KeyValuePair<string, int> item in switchedValues) // skriver ut hela Dictionary switched values
+            {
+                Console.WriteLine(item);
+            }
+
+           // ------------------------------------------------------------------------------------------------------
+
+            // 16.Bygg vidare på övning 15.
+            // Efter att du lagt till varje ny nyckel & värde i din andra dictionary, radera samma värden ur den första.
+
+
+            foreach (KeyValuePair<int, string> item in weekdays)
+            {
+                weekdays.Remove(item.Key);
+                Console.WriteLine(weekdays.Count);
+            }
+            Console.WriteLine("First Dictionary now contains {0} values.", weekdays.Count);
+              */
         }
     }
 }
