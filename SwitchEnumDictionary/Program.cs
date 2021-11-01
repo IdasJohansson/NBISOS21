@@ -19,7 +19,7 @@ namespace SwitchEnumDictionary
         static void Main(string[] args)
         {
             /*
-            // 1. 1. Be användaren skriva in ett tal. (1–7)
+            // 1. Be användaren skriva in ett tal. (1–7)
             // Skriv ut veckodagen det motsvarar med hjälp av en switch-sats.
 
             Console.WriteLine("Vilken dag är din favoritdag? Ange en siffra mellan 1-7.");
@@ -188,7 +188,27 @@ namespace SwitchEnumDictionary
             }
 
             Console.WriteLine("Month nr {0} has {1} days.",userInput, days); // Skriver ut vilket nr användaren valde samt vilket värde days har, alltså antal dagar.
-            
+            */
+
+              switch (userInput)
+            {
+                case 1:  // Om userInput är 1 ändras värdet i days till 31
+                case 3: 
+                case 5: 
+                case 7: 
+                case 8: 
+                case 10: 
+                case 12: days = 31; break;
+                case 2: days = 28; break;
+                case 4: 
+                case 6: 
+                case 9: 
+                case 11: days = 30; break;
+                default: break;
+            }
+
+            /*
+
           // ------------------------------------------------------------------------------------------------------
 
             // 7. Be användaren skriva in en månad.

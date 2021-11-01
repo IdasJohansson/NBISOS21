@@ -7,6 +7,7 @@ namespace ForEach
     {
         static void Main(string[] args)
         {
+
             /*
             // 1. Skriv ut alla tal mellan 0 – 100 med en for-loop.
 
@@ -14,7 +15,9 @@ namespace ForEach
             {
                 Console.WriteLine(i);
             }
-            
+
+            // ------------------------------------------------------------------------------------------------------------------------
+
 
             // 2. Skriv ut alla tal mellan 100 – 0 med en for-loop.
 
@@ -23,6 +26,8 @@ namespace ForEach
                 Console.WriteLine("i = {0} ", i);
             }
             
+            // ------------------------------------------------------------------------------------------------------------------------
+
 
             // 3. Skriv ut alla jämna tal mellan 0 - 100 med en for-loop.
 
@@ -40,7 +45,10 @@ namespace ForEach
                     Console.WriteLine(i);
                 }
             }
-            
+
+
+            // ------------------------------------------------------------------------------------------------------------------------
+
 
             // 4.Skriv ut alla ojämna tal mellan 1 - 99 med en for-loop.
 
@@ -58,6 +66,9 @@ namespace ForEach
                     Console.WriteLine(i);
                 }
             }
+
+           // ------------------------------------------------------------------------------------------------------------------------
+
 
             //5. Skapa en array/lista med minst 10 integers.
             // Använd en for-loop för att hitta det största talet.
@@ -84,6 +95,8 @@ namespace ForEach
             }
             Console.WriteLine(highestNr);
             
+            // ------------------------------------------------------------------------------------------------------------------------
+
 
             // 6. Skapa en loop som skriver ut alla tal mellan 1–100. Undantag:
             // Om talet är delbart med 3, skriv ut SOS
@@ -109,7 +122,10 @@ namespace ForEach
                     Console.WriteLine(i);
                 }
             }
-           
+
+            // ------------------------------------------------------------------------------------------------------------------------
+
+
             // 7. Be användaren skriva in ett värde.
             // Skapa en for-loop som startar på 0 och slutar på det värde användaren angett.
             // För varje iteration:
@@ -126,7 +142,9 @@ namespace ForEach
             }
             Console.Write("Summan av talen i loopen är: ");
             Console.WriteLine(sum); // Totalsumman av alla tal är lagrad i variabeln sum
-            
+
+           // ------------------------------------------------------------------------------------------------------------------------
+
 
             // 8. List<string> education = new List<string>() { "utveckling","Objekt","orienterad"," ","System"};
             // Använd en for-loop för att flytta ”utveckling” till rätt position, ett steg i taget.
@@ -155,7 +173,10 @@ namespace ForEach
             {
                 Console.WriteLine(letter);
             }
-             
+
+            // ------------------------------------------------------------------------------------------------------------------------
+
+
             // 10. Be användaren skriva in en textsträng.
             // Konvertera textsträngen till en lista av chars.
             // Skapa en tom lista av chars.
@@ -183,6 +204,8 @@ namespace ForEach
                 Console.WriteLine(item);
             }
             
+            // ------------------------------------------------------------------------------------------------------------------------
+
 
             // 11. Be användaren skriva in en textsträng.
             // Konvertera textsträngen till en lista av chars.
@@ -211,6 +234,7 @@ namespace ForEach
                 }
             }
            
+            // ------------------------------------------------------------------------------------------------------------------------
 
             // 12. Be användaren skriva in ett värde.
             // Skapa en loop som skriver ut samtliga fibonaccital fram till det värde användaren har angett.
@@ -232,7 +256,9 @@ namespace ForEach
                 nr1 = nr2;
                 nr2 = sum; 
             }
-             
+
+            // ------------------------------------------------------------------------------------------------------------------------
+
 
             //13. Skapa en lista med plats för 10 element.
             // Använd en for-loop för att ta in 10 värden från användaren.
@@ -279,7 +305,8 @@ namespace ForEach
                     Console.Write(numbers[i,j]);
                 }
             }
-            */
+           
+            // ------------------------------------------------------------------------------------------------------------------------
 
             //15. Skriv ut en multiplikationstabell med hjälp av en for-loop.
             //Låt användaren bestämma vilket tal som ska användas.
@@ -287,6 +314,209 @@ namespace ForEach
             // T.ex: tal = 5, antal iterationer: 20
             // Output: 5x0 = 0, 5x1 = 1..... 5x19 = 95, 5x20 = 100
 
+            Console.Write("Please enter a number whichs multiplication table will be written: ");
+            int multiTable = Convert.ToInt32(Console.ReadLine());
+            Console.Write("At what number do you want the table to stop? ");
+            int stop = Convert.ToInt32(Console.ReadLine());
+            int start = 0;
+            int sum; 
+
+            for (int i = 0; i < stop; i++)
+            {
+                sum = start * multiTable;
+                Console.WriteLine("{0} * {1} = {2}", multiTable, start, sum);
+                start++; 
+            }
+            
+            // ------------------------------------------------------------------------------------------------------------------------
+
+            // 16. Be användaren skriva in ett tal.
+            // Skriv ut tal3(tal * tal * tal) för alla nummer upp till det angivna värdet(inklusive värdet).
+            // T.ex.input = 3. 13 = 1, 23 = 8, 33 = 27
+
+            Console.WriteLine("Enter a number: ");
+            int stop = Convert.ToInt32(Console.ReadLine());
+            int sum;
+
+            for (int i = 1; i <= stop; i++)
+            {
+                sum = i * i * i;
+                Console.WriteLine("{0}³ = {1}", i, sum);
+            }
+           
+            // ------------------------------------------------------------------------------------------------------------------------
+
+            // 17.Be användaren skriva in ett tal.
+            // Skriv ut multiplikationstabellen för varje tal upp till det angivna värdet.
+
+            Console.WriteLine("Please enter a number: ");
+            int stop = Convert.ToInt32(Console.ReadLine());
+            int table = 1;
+            int result; 
+
+            for (int i = 0; i < stop; i++)
+            {
+                for (int j = 0; j <= 10; j++)
+                {
+                    result = table * j;
+                    Console.WriteLine("{0} * {1} = {2}",j, table, result );
+                }
+                Console.WriteLine();
+                table++;
+            }
+
+           
+            // ------------------------------------------------------------------------------------------------------------------------
+
+            // 18. Skapa en array som innehåller alla vokaler. (a, e, i, o, u, y, å, ä, ö).
+            // Be användaren skriva in en textsträng.
+            // Omvandla textsträngen till en lista av chars.
+            // Använda loop/ -ar för att ta bort alla vokaler från listan.
+            // Avsluta med att skriva ut den nya textsträngen.
+
+            char[] vowels = new char [] { 'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö' };
+
+            Console.WriteLine("Enter a word: ");
+            string word = Console.ReadLine();
+
+            List<Char> wordList = new List<char>() { }; 
+            // Eller wordList.AddRange(word)
+            foreach (char item in word)
+            {
+                wordList.Add(item);
+            }
+
+            foreach (char item in wordList)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < vowels.Length; i++)
+            {
+                for (int j = 0; j < wordList.Count; j++)
+                {
+                    if (wordList.Contains(vowels[i]))
+                    {
+                        wordList.Remove(vowels[i]);
+                    }
+                }
+            }
+
+            foreach (char item in wordList)
+            {
+                Console.Write(item);
+            }
+             
+            // ------------------------------------------------------------------------------------------------------------------------
+
+
+            // 19. Skapa en array som innehåller alla vokaler. (a, e, i, o, u, y, å, ä, ö).
+            // Be användaren skriva in en textsträng.
+            // Omvandla textsträngen till en lista av chars.
+            // Använda loop/ -ar för att ta bort alla konsonanter från listan.
+            // Avsluta med att skriva ut den nya textsträngen.
+
+            char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö' };
+
+            Console.WriteLine("Enter a word: ");
+            string word = Console.ReadLine();
+            bool consonat = false;
+
+            List<Char> wordList = new List<char>() { };
+            wordList.AddRange(word);
+ 
+            for (int i = wordList.Count - 1; i >= 0; i--)
+            {
+                consonat = true;
+                for (int j = 0; j < vowels.Length; j++)
+                {
+                    if (wordList[i] == vowels[j])
+                    {
+                        consonat = false;
+                        break; 
+                    }
+                }
+                if (consonat)
+                {
+                    wordList.RemoveAt(i);
+                }
+            }
+
+            foreach (char item in wordList)
+            {
+                Console.Write(item);
+            }
+
+            // ------------------------------------------------------------------------------------------------------------------------
+
+            //20. Skapa en lista som innehåller alla vokaler. (a, e, i, o, u, y, å, ä, ö).
+            // Be användaren skriva in en textsträng.
+            // Omvandla textsträngen till en lista av chars.
+            // Använda loop/ -ar för att ta bort alla vokaler från listan.
+            // Avsluta med att skriva ut den nya textsträngen.
+
+            List<char> vowelsList = new List<char>() { 'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö' };
+            Console.WriteLine("Enter a word: ");
+            string userInput = Console.ReadLine();
+            List<char> userInputList = new List<char>() { };
+            userInputList.AddRange(userInput);
+
+            for (int i = 0; i < vowelsList.Count; i++)
+            {
+                for (int j = 0; j <= userInputList.Count; j++)
+                {
+                    if (userInputList.Contains(vowelsList[i]))
+                    {
+                        userInputList.Remove(vowelsList[i]);
+                    }
+                }
+            }
+
+            foreach (char item in userInputList)
+            {
+                Console.Write(item);
+            }
+            
+            // ------------------------------------------------------------------------------------------------------------------------
+
+            // 21.Skapa en lista som innehåller alla vokaler. (a, e, i, o, u, y, å, ä, ö).
+            // Be användaren skriva in en textsträng.
+            // Omvandla textsträngen till en lista av chars.
+            // Använda loop/ -ar för att ta bort alla konsonanter från listan.
+            // Avsluta med att skriva ut den nya textsträngen.
+
+            List<char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö' };
+            List<char> userWordList = new List<char>() { }; 
+
+            Console.WriteLine("Enter a word: ");
+            string userWord = Console.ReadLine();
+            userWordList.AddRange(userWord);
+            Console.WriteLine();
+
+            Console.WriteLine("Your word is: ");
+            foreach (char item in userWordList)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.Write("Word without consonantes: ");
+
+            for (int i = userWordList.Count - 1; i >= 0; i--)
+            {
+                if (vowels.Contains(userWordList[i]))
+                {
+                    userWordList.RemoveAll(item => item == userWordList[i]);
+                }
+            }
+
+           foreach (char item in userWordList)
+           {
+               Console.Write(item);
+           }
+           */
 
         }
     }

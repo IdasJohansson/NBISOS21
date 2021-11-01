@@ -253,9 +253,11 @@ namespace WhileDoWhile
                 Console.WriteLine("{0} * {1} = {2}", number, count,number * count);
                 count++;
             }
-           
+            
+
             // 10.Be användaren skriva in ett valfritt tal.
-            // Skapa en array av valfri typ, med plats för lika många element som användaren har valt.Skapa en loop som ser till att användaren skriver in värden för varje element.
+            // Skapa en array av valfri typ, med plats för lika många element som användaren har valt.
+            // Skapa en loop som ser till att användaren skriver in värden för varje element.
             // Skriv ut samtliga element i arrayen innan programmet avslutas.
 
             Console.Write("Enter desired number of elements: ");
@@ -277,6 +279,7 @@ namespace WhileDoWhile
                 count++;
             }
 
+           
             //11. Skapa en variabel som heter memory, sätt värdet till 0. Skapa en variabel som heter value, sätt värdet till 0.
             // Skapa en while-loop med villkoret value>=0
             // Fråga användaren efter ett nytt värde.
@@ -308,12 +311,59 @@ namespace WhileDoWhile
 
             // När loopen bryts skriv ut summan
             Console.WriteLine("Total summa: {0}", memory); // Så länge value är större än 0 så fortsätter loppen, för att bryta loopen måste man skriva in ett negativt tal.
-             */
+           
 
-            // 12.Skriv ett program där användaren ska gissa på huvudstäder. Lagra länder och huvudstäder i två separata arrays/ listor.Skriv ut ”Vad heter huvudstaden i .... ?”
+            // 12.Skriv ett program där användaren ska gissa på huvudstäder.
+            // Lagra länder och huvudstäder i två separata arrays/ listor.
+            // Skriv ut ”Vad heter huvudstaden i .... ?”
             // Kontrollera om svaret är rätt.
             // Skriv ut något passande beroende på om det är rätt eller fel.
-            // Loopa tills användaren gissat på samtliga länder, alt x antal gissningar. Räkna antal rätta resp. felaktiga svar.
+            // Loopa tills användaren gissat på samtliga länder, alt x antal gissningar.
+            // Räkna antal rätta resp. felaktiga svar.
+
+            List<string> countries = new List<string>()
+            {
+                "Sweden",
+                "Norway",
+                "Finland",
+                "Denmark"
+            };
+
+            List<string> capitals = new List<string>()
+            {
+                "Stockholm",
+                "Oslo",
+                "Helsinki",
+                "Copenhagen"
+            };
+
+            int count = 0;
+            int wrongAnswears = 0;
+            int correctAnswears = 0;
+            string answear;
+
+
+            while (count < countries.Count)
+            {
+                Console.WriteLine("What is the capital in {0}? ", countries[count]);
+                answear = Console.ReadLine();
+
+                if (answear == capitals[count])
+                {
+                    Console.WriteLine("Answear is correct! ");
+                    correctAnswears++; 
+                }
+                else
+                {
+                    Console.WriteLine("Wrong answear :( ");
+                    wrongAnswears++; 
+                }
+                count++; 
+            }
+
+            Console.WriteLine("Your score is: {0}/{1} ", correctAnswears, countries.Count);
+              */
+
 
 
         }

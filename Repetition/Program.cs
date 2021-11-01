@@ -63,7 +63,7 @@ namespace Repetition
 
             // Skriv ut veckodagen
             Console.WriteLine(day);
-             */
+            
 
             static void AreaCircle(double radius)
             {
@@ -75,8 +75,32 @@ namespace Repetition
                 Console.WriteLine("Area of the circle is {0}", area);
             }
             AreaCircle(20);
-            
+             */
+            Console.WriteLine("Alternativ 1: Remove med for-loop");
+            List<char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö' };
+            string name = "Handelsakademin";
+            List<char> nameList = new List<char>();
+            nameList.AddRange(name);
+
+            for (int i = 0; i < vowels.Count; i++)
+            {
+                for (int j = 0; j <= nameList.Count; j++)
+                {
+                    if (nameList.Contains(vowels[i]))
+                    {
+                        nameList.Remove(vowels[i]); // Remove tar bort första förekomsten den hittar. Vi behöver därför loopa flera gånger för att hitta varje element som matchar.
+                    }
+                }
+            }
+
+            foreach (var item in nameList)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine();
+
 
         }
+
     }
 }
