@@ -75,7 +75,7 @@ namespace Repetition
                 Console.WriteLine("Area of the circle is {0}", area);
             }
             AreaCircle(20);
-             */
+           
             Console.WriteLine("Alternativ 1: Remove med for-loop");
             List<char> vowels = new List<char>() { 'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö' };
             string name = "Handelsakademin";
@@ -98,9 +98,25 @@ namespace Repetition
                 Console.Write(item);
             }
             Console.WriteLine();
+              */
 
 
+            int height = 10;
+
+
+
+            for (int i = 1; i <= height * height; i++)
+            {
+                if (i % height == 0)
+                {
+                    Console.WriteLine("#");
+                }
+                else
+                {
+                    Console.Write("#");
+                }
+
+            }
         }
-
     }
 }

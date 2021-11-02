@@ -188,8 +188,9 @@ namespace SwitchEnumDictionary
             }
 
             Console.WriteLine("Month nr {0} has {1} days.",userInput, days); // Skriver ut vilket nr användaren valde samt vilket värde days har, alltså antal dagar.
-            */
+          
 
+            // Alternativ är att gruppera switchen såhär: 
               switch (userInput)
             {
                 case 1:  // Om userInput är 1 ändras värdet i days till 31
@@ -207,7 +208,7 @@ namespace SwitchEnumDictionary
                 default: break;
             }
 
-            /*
+     
 
           // ------------------------------------------------------------------------------------------------------
 
@@ -462,6 +463,7 @@ namespace SwitchEnumDictionary
 
             //15. Skapa en dictionary med alla veckodagar.
             // Använd valfri loop för att, i en ny dictionary, byta plats på nyckel och värde.
+            */
 
             Dictionary<int, string> weekdays = new Dictionary<int, string>()
             {
@@ -481,8 +483,10 @@ namespace SwitchEnumDictionary
             Console.WriteLine(); // Tom rad
 
 
-
             Dictionary<string, int> switchedValues = new Dictionary<string, int>() { }; // Tom dictionary med string som key och int som value
+
+
+            
             foreach (KeyValuePair<int, string> item in weekdays) // För varje int och sting i Dictionary weekdays
             {
                 switchedValues.Add(item.Value, item.Key); //Lägg till value i switchedValues (Blir nyckel), Lägg till key (Blir value)
@@ -493,19 +497,34 @@ namespace SwitchEnumDictionary
                 Console.WriteLine(item);
             }
 
-           // ------------------------------------------------------------------------------------------------------
+            /*
+            // Alternativ med for-loop
+            for (int i = 1; i < weekdays.Count; i++)
+            {
+                switchedValues.Add(weekdays[i], i); // Lägg till i switchedValues [nyckel], värde. i ökar med ett varje varv. (Första varvet blir "Måndag", 1. osv)
+
+            }
+
+
+            foreach (KeyValuePair<string, int> item in switchedValues)
+            {
+                Console.WriteLine("Key = {0}, Value = {1} ", item.Key, item.Value);
+            }
+             */
+
+            // ------------------------------------------------------------------------------------------------------
 
             // 16.Bygg vidare på övning 15.
             // Efter att du lagt till varje ny nyckel & värde i din andra dictionary, radera samma värden ur den första.
-
-
+            Console.WriteLine();
+            Console.WriteLine("Ta bort värden från första dictionaryn: ");
             foreach (KeyValuePair<int, string> item in weekdays)
             {
                 weekdays.Remove(item.Key);
                 Console.WriteLine(weekdays.Count);
             }
             Console.WriteLine("First Dictionary now contains {0} values.", weekdays.Count);
-              */
+              
         }
     }
 }
